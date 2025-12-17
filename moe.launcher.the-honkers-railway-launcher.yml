@@ -80,6 +80,27 @@ modules:
         url: https://github.com/p7zip-project/p7zip
         tag: v17.05
 
+  # Needed for game installation
+  - name: protobuf
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=None
+      - -DBUILD_SHARED_LIBS=ON
+      - -Dprotobuf_BUILD_TESTS=OFF
+    sources:
+      - type: git
+        url: https://github.com/protocolbuffers/protobuf.git
+        commit: a8d85ffbc7158660b4247f732371d1b07780510e
+        tag: v33.1
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
+          version-query: $tag | sub("^[vV]"; "")
+    cleanup:
+      - /bin
+
   - name: railway
     buildsystem: simple
     build-options:
