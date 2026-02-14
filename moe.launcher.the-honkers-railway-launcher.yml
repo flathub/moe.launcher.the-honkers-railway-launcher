@@ -64,8 +64,8 @@ modules:
         for f in *; do [[ " $keep " =~ " $f " ]] || rm -f "$f"; done
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.52.0.tar.xz
-        sha256: 3cd8fee86f69a949cb610fee8cd9264e6873d07fa58411f6060b3d62729ed7c5
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.53.0.tar.xz
+        sha256: 5818bd7d80b061bbbdfec8a433d609dc8818a05991f731ffc4a561e2ca18c653
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -90,8 +90,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/protocolbuffers/protobuf.git
-        commit: a8d85ffbc7158660b4247f732371d1b07780510e
-        tag: v33.1
+        commit: b6f9284da830b69be787732ffdaa35049d20a088
+        tag: v33.5
         x-checker-data:
           type: json
           url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
@@ -143,7 +143,8 @@ modules:
       - install -Dm644 assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.the-honkers-railway-launcher.png
       - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.the-honkers-railway-launcher
         --set-key=Icon --set-value=moe.launcher.the-honkers-railway-launcher assets/honkers-railway-launcher.desktop
-      - install -Dm644 assets/moe.launcher.the-honkers-railway-launcher.metainfo.xml /app/share/metainfo/moe.launcher.the-honkers-railway-launcher.metainfo.xml
+      - install -Dm644 assets/moe.launcher.the-honkers-railway-launcher.metainfo.xml
+        /app/share/metainfo/moe.launcher.the-honkers-railway-launcher.metainfo.xml
       - mkdir -p /app/utils/
     sources:
       - type: git
