@@ -24,13 +24,11 @@ build-options:
 
 cleanup:
   - /include
+  - /lib/cmake
   - /lib/pkgconfig
   - /man
+  - /share/bash-completion
   - /share/doc
-  - /share/gtk-doc
-  - /share/man
-  - /share/pkgconfig
-  - /share/vala
   - '*.la'
   - '*.a'
 
