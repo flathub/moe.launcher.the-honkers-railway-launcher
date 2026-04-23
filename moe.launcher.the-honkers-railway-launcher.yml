@@ -131,7 +131,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/the-honkers-railway-launcher
-        tag: 1.14.4
+        tag: 1.14.5
       - type: file
         path: moe.launcher.the-honkers-railway-launcher.sh
       - cargo-sources.json
