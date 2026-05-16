@@ -1,0 +1,62 @@
+name: Update Launcher
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  GIT_AUTHOR_NAME: github-actions[bot]
+  GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+
+jobs:
+  update-launcher:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        branch: [ master ]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+
+      - name: Download flatpak-builder-tools
+        run: |
+          git clone -b master https://github.com/flatpak/flatpak-builder-tools ../builder-tools
+
+      - name: Get an anime game launcher repo
+        run: |
+          git clone https://github.com/an-anime-team/the-honkers-railway-launcher ../hrl
+
+      - name: Install dependencies
+        run: |
+          set -e
+          sudo snap install yq
+          sudo apt update
+          sudo apt install python3-tomlkit python3-aiohttp -y
+
+      - name: Generate Cargo sources
+        run: |
+          python3 ../builder-tools/cargo/flatpak-cargo-generator.py ../hrl/Cargo.lock -o cargo-sources.json
+          
+      - name: Update YML
+        env:
+          tag: ${{ inputs.tag }}
+        run: |
+          yq -i '.modules[5].sources[0].tag = env(tag)' moe.launcher.the-honkers-railway-launcher.yml
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: ${{ inputs.tag }}
+          title: Update to ${{ inputs.tag }} 
+          commit-message: Updated flatpak to ${{ inputs.tag }}
