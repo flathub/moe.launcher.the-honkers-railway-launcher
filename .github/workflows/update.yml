@@ -33,7 +33,7 @@ jobs:
         run: |
           git clone -b master https://github.com/flatpak/flatpak-builder-tools ../builder-tools
 
-      - name: Get an anime game launcher repo
+      - name: Get honkers railway launcher repo
         run: |
           git clone https://github.com/an-anime-team/the-honkers-railway-launcher ../hrl
 
