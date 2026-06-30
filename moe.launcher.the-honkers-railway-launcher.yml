@@ -121,7 +121,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/the-honkers-railway-launcher
-        tag: 1.15.2
+        # FIXME: use tag again from 1.15.3 to workaround tag issue
+        commit: 60e8ea6c149b0eb73e526de0f2a41ecd1a57407c
       - type: file
         path: moe.launcher.the-honkers-railway-launcher.sh
       - cargo-sources.json
