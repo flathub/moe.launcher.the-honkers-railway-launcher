@@ -2,7 +2,7 @@ app-id: moe.launcher.the-honkers-railway-launcher
 command: moe.launcher.the-honkers-railway-launcher
 rename-desktop-file: honkers-railway-launcher.desktop
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: "50"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -25,8 +25,8 @@ cleanup:
   - /man
   - /share/bash-completion
   - /share/doc
-  - '*.la'
-  - '*.a'
+  - "*.la"
+  - "*.a"
 modules:
   - name: gamemode
     buildsystem: meson
@@ -121,7 +121,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/the-honkers-railway-launcher
-        tag: 1.15.1
+        # FIXME: use tag again from 1.15.3 to workaround tag issue
+        commit: 60e8ea6c149b0eb73e526de0f2a41ecd1a57407c
       - type: file
         path: moe.launcher.the-honkers-railway-launcher.sh
       - cargo-sources.json
