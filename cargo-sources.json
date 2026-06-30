@@ -2,20 +2,20 @@
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-game-core",
-        "commit": "de96f35b5a7e863f077d27abd50f6ee977cc92de",
-        "dest": "flatpak-cargo/git/anime-game-core-de96f35"
+        "commit": "ba60faf15940e21fd20134c8f533fe981d313fee",
+        "dest": "flatpak-cargo/git/anime-game-core-ba60faf"
     },
     {
         "type": "git",
         "url": "https://github.com/an-anime-team/anime-launcher-sdk",
-        "commit": "c0991afb76878f17abf754effa64d86125af8110",
-        "dest": "flatpak-cargo/git/anime-launcher-sdk-c0991af"
+        "commit": "4b9cb6efb04bacec57747e19e7277086d201562e",
+        "dest": "flatpak-cargo/git/anime-launcher-sdk-4b9cb6e"
     },
     {
         "type": "git",
         "url": "https://github.com/dawn-winery/sophon-tools",
-        "commit": "89f4a70476f7e5c24f03a6c269a8b291372cfd5e",
-        "dest": "flatpak-cargo/git/sophon-tools-89f4a70"
+        "commit": "58d223a5e1268bb7327bb31fe5c664aff56f6b6f",
+        "dest": "flatpak-cargo/git/sophon-tools-58d223a"
     },
     {
         "type": "archive",
@@ -98,12 +98,12 @@
     {
         "type": "shell",
         "commands": [
-            "cp -r --reflink=auto \"flatpak-cargo/git/anime-game-core-de96f35/.\" \"cargo/vendor/anime-game-core\""
+            "cp -r --reflink=auto \"flatpak-cargo/git/anime-game-core-ba60faf/.\" \"cargo/vendor/anime-game-core\""
         ]
     },
     {
         "type": "inline",
-        "contents": "[package]\nname = \"anime-game-core\"\nversion = \"1.38.8\"\nauthors = [\"Nikita Podvirnyi <krypt0nn@vk.com>\"]\nlicense = \"GPL-3.0\"\nreadme = \"README.md\"\nrepository = \"https://github.com/an-anime-team/anime-game-core\"\nedition = \"2021\"\npublish = false\n\n[dependencies]\ndns-lookup = \"2.0\"\nserde_json = \"1.0\"\nfs_extra = \"1.3.0\"\nthiserror = \"1.0\"\ntracing = \"0.1\"\nlazy_static = \"1.5.0\"\n[dependencies.minreq]\nversion = \"2.13\"\nfeatures = [\"json-using-serde\", \"https-rustls-probe\", \"proxy\"]\n\n[dependencies.serde]\nversion = \"1.0\"\nfeatures = [\"derive\"]\n\n[dependencies.cached]\nversion = \"0.55\"\nfeatures = [\"proc_macro\"]\n\n[dependencies.anyhow]\nversion = \"1.0\"\nfeatures = [\"backtrace\"]\n\n[dependencies.sysinfo]\nversion = \"0.35\"\noptional = true\nfeatures = [\"linux-netdevs\"]\n\n[dependencies.zip]\nversion = \"3.0\"\noptional = true\n\n[dependencies.tar]\nversion = \"0.4\"\noptional = true\n\n[dependencies.xz]\nversion = \"0.1\"\noptional = true\n\n[dependencies.bzip2]\nversion = \"0.4\"\noptional = true\n\n[dependencies.flate2]\nversion = \"1.0\"\noptional = true\n\n[dependencies.md-5]\nversion = \"0.10\"\nfeatures = [\"asm\"]\noptional = true\n\n[dependencies.kinda-virtual-fs]\nversion = \"0.1.1\"\noptional = true\n\n[dependencies.sophon]\ngit = \"https://github.com/dawn-winery/sophon-tools.git\"\ntag = \"v0.1.6\"\npackage = \"sophon-lib\"\noptional = true\n\n[features]\ngenshin = [\"sophon\"]\nstar-rail = [\"sophon\"]\nzzz = []\nhonkai = []\nsophon = [\"dep:sophon\"]\ninstall = [\"external\", \"dep:sysinfo\", \"dep:zip\", \"dep:tar\", \"dep:xz\", \"dep:bzip2\", \"dep:flate2\", \"dep:md-5\"]\nexternal = [\"dep:kinda-virtual-fs\"]\npatches = []\npatch-jadeite = []\npatch-mfc140 = []\nall = [\"install\", \"external\", \"patches\"]\n\n[build-dependencies.protobuf-codegen]\nversion = \"3.7.2\"\noptional = true\n",
+        "contents": "[package]\nname = \"anime-game-core\"\nversion = \"1.38.10\"\nauthors = [\"Nikita Podvirnyi <krypt0nn@vk.com>\"]\nlicense = \"GPL-3.0\"\nreadme = \"README.md\"\nrepository = \"https://github.com/an-anime-team/anime-game-core\"\nedition = \"2021\"\npublish = false\n\n[dependencies]\ndns-lookup = \"2.0\"\nserde_json = \"1.0\"\nfs_extra = \"1.3.0\"\nthiserror = \"1.0\"\ntracing = \"0.1\"\nlazy_static = \"1.5.0\"\n[dependencies.minreq]\nversion = \"2.13\"\nfeatures = [\"json-using-serde\", \"https-rustls-probe\", \"proxy\"]\n\n[dependencies.serde]\nversion = \"1.0\"\nfeatures = [\"derive\"]\n\n[dependencies.cached]\nversion = \"0.55\"\nfeatures = [\"proc_macro\"]\n\n[dependencies.anyhow]\nversion = \"1.0\"\nfeatures = [\"backtrace\"]\n\n[dependencies.sysinfo]\nversion = \"0.35\"\noptional = true\nfeatures = [\"linux-netdevs\"]\n\n[dependencies.zip]\nversion = \"3.0\"\noptional = true\n\n[dependencies.tar]\nversion = \"0.4\"\noptional = true\n\n[dependencies.xz]\nversion = \"0.1\"\noptional = true\n\n[dependencies.bzip2]\nversion = \"0.4\"\noptional = true\n\n[dependencies.flate2]\nversion = \"1.0\"\noptional = true\n\n[dependencies.md-5]\nversion = \"0.10\"\nfeatures = [\"asm\"]\noptional = true\n\n[dependencies.kinda-virtual-fs]\nversion = \"0.1.1\"\noptional = true\n\n[dependencies.sophon]\ngit = \"https://github.com/dawn-winery/sophon-tools.git\"\ntag = \"v0.1.8\"\npackage = \"sophon-lib\"\noptional = true\n\n[features]\ngenshin = [\"sophon\"]\nstar-rail = [\"sophon\"]\nzzz = []\nhonkai = []\nsophon = [\"dep:sophon\"]\ninstall = [\"external\", \"dep:sysinfo\", \"dep:zip\", \"dep:tar\", \"dep:xz\", \"dep:bzip2\", \"dep:flate2\", \"dep:md-5\"]\nexternal = [\"dep:kinda-virtual-fs\"]\npatches = []\npatch-jadeite = []\npatch-mfc140 = []\nall = [\"install\", \"external\", \"patches\"]\n\n[build-dependencies.protobuf-codegen]\nversion = \"3.7.2\"\noptional = true\n",
         "dest": "cargo/vendor/anime-game-core",
         "dest-filename": "Cargo.toml"
     },
@@ -116,12 +116,12 @@
     {
         "type": "shell",
         "commands": [
-            "cp -r --reflink=auto \"flatpak-cargo/git/anime-launcher-sdk-c0991af/.\" \"cargo/vendor/anime-launcher-sdk\""
+            "cp -r --reflink=auto \"flatpak-cargo/git/anime-launcher-sdk-4b9cb6e/.\" \"cargo/vendor/anime-launcher-sdk\""
         ]
     },
     {
         "type": "inline",
-        "contents": "[package]\nname = \"anime-launcher-sdk\"\nversion = \"1.35.10\"\nauthors = [\"Nikita Podvirnyi <krypt0nn@vk.com>\"]\nlicense = \"GPL-3.0\"\nreadme = \"README.md\"\nrepository = \"https://github.com/an-anime-team/anime-launcher-sdk\"\nedition = \"2021\"\npublish = false\n\n[dependencies]\ntracing = \"0.1\"\n[dependencies.anime-game-core]\ngit = \"https://github.com/an-anime-team/anime-game-core\"\ntag = \"1.38.8\"\nfeatures = [\"all\"]\n\n[dependencies.anyhow]\nversion = \"1.0\"\nfeatures = [\"backtrace\"]\n\n[dependencies.serde]\nversion = \"1.0\"\nfeatures = [\"derive\"]\noptional = true\n\n[dependencies.serde_json]\nversion = \"1.0\"\noptional = true\n\n[dependencies.cached]\nversion = \"0.55\"\nfeatures = [\"proc_macro\"]\n\n[dependencies.enum-ordinalize]\nversion = \"4.3\"\noptional = true\n\n[dependencies.wincompatlib]\nversion = \"0.7.7\"\nfeatures = [\"dxvk\"]\noptional = true\n\n[dependencies.lazy_static]\nversion = \"1.5.0\"\noptional = true\n\n[dependencies.md-5]\nversion = \"0.10\"\nfeatures = [\"asm\"]\noptional = true\n\n[features]\ngenshin = [\"anime-game-core/genshin\"]\nstar-rail = [\"anime-game-core/star-rail\"]\nzzz = [\"anime-game-core/zzz\"]\nhonkai = [\"anime-game-core/honkai\"]\nstar-rail-patch = [\"anime-game-core/patch-jadeite\", \"anime-game-core/patch-mfc140\"]\nhonkai-patch = [\"anime-game-core/patch-jadeite\"]\nstates = []\nconfig = [\"dep:serde\", \"dep:serde_json\", \"dep:enum-ordinalize\"]\ncomponents = [\"dep:wincompatlib\", \"dep:lazy_static\"]\ngame = [\"components\", \"config\"]\nsandbox = []\nsessions = []\nenvironment-emulation = []\nfps-unlocker = [\"dep:md-5\"]\nall = [\"states\", \"config\", \"components\", \"game\", \"sandbox\", \"sessions\", \"environment-emulation\", \"fps-unlocker\"]\ndefault = [\"all\"]\n",
+        "contents": "[package]\nname = \"anime-launcher-sdk\"\nversion = \"1.35.12\"\nauthors = [\"Nikita Podvirnyi <krypt0nn@vk.com>\"]\nlicense = \"GPL-3.0\"\nreadme = \"README.md\"\nrepository = \"https://github.com/an-anime-team/anime-launcher-sdk\"\nedition = \"2021\"\npublish = false\n\n[dependencies]\ntracing = \"0.1\"\n[dependencies.anime-game-core]\ngit = \"https://github.com/an-anime-team/anime-game-core\"\ntag = \"1.38.10\"\nfeatures = [\"all\"]\n\n[dependencies.anyhow]\nversion = \"1.0\"\nfeatures = [\"backtrace\"]\n\n[dependencies.serde]\nversion = \"1.0\"\nfeatures = [\"derive\"]\noptional = true\n\n[dependencies.serde_json]\nversion = \"1.0\"\noptional = true\n\n[dependencies.cached]\nversion = \"0.55\"\nfeatures = [\"proc_macro\"]\n\n[dependencies.enum-ordinalize]\nversion = \"4.3\"\noptional = true\n\n[dependencies.wincompatlib]\nversion = \"0.7.7\"\nfeatures = [\"dxvk\"]\noptional = true\n\n[dependencies.lazy_static]\nversion = \"1.5.0\"\noptional = true\n\n[dependencies.md-5]\nversion = \"0.10\"\nfeatures = [\"asm\"]\noptional = true\n\n[features]\ngenshin = [\"anime-game-core/genshin\"]\nstar-rail = [\"anime-game-core/star-rail\"]\nzzz = [\"anime-game-core/zzz\"]\nhonkai = [\"anime-game-core/honkai\"]\nstar-rail-patch = [\"anime-game-core/patch-jadeite\", \"anime-game-core/patch-mfc140\"]\nhonkai-patch = [\"anime-game-core/patch-jadeite\"]\nstates = []\nconfig = [\"dep:serde\", \"dep:serde_json\", \"dep:enum-ordinalize\"]\ncomponents = [\"dep:wincompatlib\", \"dep:lazy_static\"]\ngame = [\"components\", \"config\"]\nsandbox = []\nsessions = []\nenvironment-emulation = []\nfps-unlocker = [\"dep:md-5\"]\nall = [\"states\", \"config\", \"components\", \"game\", \"sandbox\", \"sessions\", \"environment-emulation\", \"fps-unlocker\"]\ndefault = [\"all\"]\n",
         "dest": "cargo/vendor/anime-launcher-sdk",
         "dest-filename": "Cargo.toml"
     },
@@ -4034,12 +4034,12 @@
     {
         "type": "shell",
         "commands": [
-            "cp -r --reflink=auto \"flatpak-cargo/git/sophon-tools-89f4a70/sophon-lib\" \"cargo/vendor/sophon-lib\""
+            "cp -r --reflink=auto \"flatpak-cargo/git/sophon-tools-58d223a/sophon-lib\" \"cargo/vendor/sophon-lib\""
         ]
     },
     {
         "type": "inline",
-        "contents": "[package]\nname = \"sophon-lib\"\nversion = \"0.1.6\"\nedition = \"2024\"\nlicense = \"GPL-3.0\"\n\n[features]\ndefault = [\"vendored-hpatchz\"]\nvendored-hpatchz = []\npaimon = [\"dep:paimon\"]\nextra-logs = []\n\n[dependencies]\nthiserror = \"2.0.16\"\nmd-5 = \"0.10.6\"\ntracing = \"0.1.41\"\nfs2 = \"0.4.3\"\ncrossbeam-channel = \"0.5.15\"\nbytes = \"1.11.0\"\nfs_extra = \"1.3.0\"\nprost = \"0.14.3\"\ninterprocess = \"2.4.0\"\nrand = \"0.10.0\"\n[dependencies.zstd]\nversion = \"0.13\"\n\n[dependencies.reqwest]\nversion = \"0.12\"\nfeatures = [\"blocking\", \"h2\", \"http2\", \"json\", \"rustls-tls\", \"rustls-tls-webpki-roots\", \"socks\"]\ndefault-features = false\n\n[dependencies.serde]\nversion = \"1.0.219\"\nfeatures = [\"derive\"]\n\n[dependencies.paimon]\ngit = \"https://dawn.wine/lily/paimon\"\nversion = \"0.1.0\"\noptional = true\n\n[build-dependencies]\nmd-5 = \"0.10.6\"\nprost-build = \"0.14.3\"\n",
+        "contents": "[package]\nname = \"sophon-lib\"\nversion = \"0.1.8\"\nedition = \"2024\"\nlicense = \"GPL-3.0-or-later\"\nrust-version = \"1.94.1\"\n\n[features]\ndefault = [\"vendored-hpatchz\"]\nvendored-hpatchz = []\npaimon = [\"dep:paimon\"]\nextra-logs = []\n\n[dependencies]\nthiserror = \"2.0.16\"\nmd-5 = \"0.10.6\"\ntracing = \"0.1.41\"\nfs2 = \"0.4.3\"\ncrossbeam-channel = \"0.5.15\"\nbytes = \"1.11.0\"\nfs_extra = \"1.3.0\"\nprost = \"0.14.3\"\ninterprocess = \"2.4.0\"\nrand = \"0.10.0\"\n[dependencies.zstd]\nversion = \"0.13\"\n\n[dependencies.reqwest]\nversion = \"0.12\"\nfeatures = [\"blocking\", \"h2\", \"http2\", \"json\", \"rustls-tls\", \"rustls-tls-webpki-roots\", \"socks\"]\ndefault-features = false\n\n[dependencies.serde]\nversion = \"1.0.219\"\nfeatures = [\"derive\"]\n\n[dependencies.paimon]\ngit = \"https://dawn.wine/lily/paimon\"\nversion = \"0.1.0\"\noptional = true\n\n[build-dependencies]\nmd-5 = \"0.10.6\"\nprost-build = \"0.14.3\"\n",
         "dest": "cargo/vendor/sophon-lib",
         "dest-filename": "Cargo.toml"
     },
@@ -6170,7 +6170,7 @@
     },
     {
         "type": "inline",
-        "contents": "[source]\n[source.vendored-sources]\ndirectory = \"cargo/vendor\"\n\n[source.crates-io]\nreplace-with = \"vendored-sources\"\n\n[source.\"https://github.com/an-anime-team/anime-game-core\"]\ngit = \"https://github.com/an-anime-team/anime-game-core\"\nreplace-with = \"vendored-sources\"\ntag = \"1.38.8\"\n\n[source.\"https://github.com/an-anime-team/anime-launcher-sdk\"]\ngit = \"https://github.com/an-anime-team/anime-launcher-sdk\"\nreplace-with = \"vendored-sources\"\ntag = \"1.35.10\"\n\n[source.\"https://github.com/dawn-winery/sophon-tools\"]\ngit = \"https://github.com/dawn-winery/sophon-tools\"\nreplace-with = \"vendored-sources\"\ntag = \"v0.1.6\"\n",
+        "contents": "[source]\n[source.vendored-sources]\ndirectory = \"cargo/vendor\"\n\n[source.crates-io]\nreplace-with = \"vendored-sources\"\n\n[source.\"https://github.com/an-anime-team/anime-game-core\"]\ngit = \"https://github.com/an-anime-team/anime-game-core\"\nreplace-with = \"vendored-sources\"\ntag = \"1.38.10\"\n\n[source.\"https://github.com/an-anime-team/anime-launcher-sdk\"]\ngit = \"https://github.com/an-anime-team/anime-launcher-sdk\"\nreplace-with = \"vendored-sources\"\ntag = \"1.35.12\"\n\n[source.\"https://github.com/dawn-winery/sophon-tools\"]\ngit = \"https://github.com/dawn-winery/sophon-tools\"\nreplace-with = \"vendored-sources\"\ntag = \"v0.1.8\"\n",
         "dest": "cargo",
         "dest-filename": "config"
     }
