@@ -80,8 +80,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/protocolbuffers/protobuf.git
-        commit: 35cd01f9fe9afbeea38cc7b979a3b6bfcde82c03
-        tag: v35.1
+        commit: f377bfefc5e2cfab68b816903c25b23e091c439d
+        tag: v36.1
         x-checker-data:
           type: json
           url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
@@ -121,8 +121,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/an-anime-team/the-honkers-railway-launcher
-        # FIXME: use tag again from 1.15.3 to workaround tag issue
-        commit: 60e8ea6c149b0eb73e526de0f2a41ecd1a57407c
+        tag: 1.15.3
       - type: file
         path: moe.launcher.the-honkers-railway-launcher.sh
       - cargo-sources.json
