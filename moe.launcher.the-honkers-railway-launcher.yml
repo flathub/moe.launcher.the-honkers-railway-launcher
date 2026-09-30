@@ -2,7 +2,7 @@ app-id: moe.launcher.the-honkers-railway-launcher
 command: moe.launcher.the-honkers-railway-launcher
 rename-desktop-file: honkers-railway-launcher.desktop
 runtime: org.gnome.Platform
-runtime-version: "50"
+runtime-version: '50'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -25,8 +25,8 @@ cleanup:
   - /man
   - /share/bash-completion
   - /share/doc
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 modules:
   - name: gamemode
     buildsystem: meson
@@ -56,8 +56,8 @@ modules:
         for f in *; do [[ " $keep " =~ " $f " ]] || rm -f "$f"; done
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.55.0.tar.xz
-        sha256: 457fdb04dc8728e007d4688695e6912e6f680727920f2a40bf11eacc17505357
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.56.0.tar.xz
+        sha256: 26c56c296b38c0695b26fa95f475f1d01704d2d38e73465ca30b0b2f5dc789d3
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -80,8 +80,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/protocolbuffers/protobuf.git
-        commit: f377bfefc5e2cfab68b816903c25b23e091c439d
-        tag: v36.1
+        commit: 2c74169b34066ceb8ddb6b882fcb3fb32d737a55
+        tag: v36.2
         x-checker-data:
           type: json
           url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
