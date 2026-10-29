@@ -2,7 +2,7 @@ app-id: moe.launcher.the-honkers-railway-launcher
 command: moe.launcher.the-honkers-railway-launcher
 rename-desktop-file: honkers-railway-launcher.desktop
 runtime: org.gnome.Platform
-runtime-version: "50"
+runtime-version: '50'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -25,8 +25,8 @@ cleanup:
   - /man
   - /share/bash-completion
   - /share/doc
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 modules:
   - name: gamemode
     buildsystem: meson
@@ -38,12 +38,14 @@ modules:
       - install -Dm775 ../data/gamemoderun -t /app/bin
     sources:
       - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.8.2/gamemode-1.8.2.tar.xz
+        url: 
+          https://github.com/FeralInteractive/gamemode/releases/download/1.8.2/gamemode-1.8.2.tar.xz
         sha256: 98cd1bcf6101c92fe87f974c7776af23c7e18f29ce6ecfe572b1c39dcde5c181
         x-checker-data:
           type: anitya
           project-id: 17410
-          url-template: https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
+          url-template: 
+            https://github.com/FeralInteractive/gamemode/releases/download/$version/gamemode-$version.tar.xz
   - name: git
     buildsystem: autotools
     config-opts:
@@ -56,8 +58,8 @@ modules:
         for f in *; do [[ " $keep " =~ " $f " ]] || rm -f "$f"; done
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.55.0.tar.xz
-        sha256: 457fdb04dc8728e007d4688695e6912e6f680727920f2a40bf11eacc17505357
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.56.0.tar.xz
+        sha256: 26c56c296b38c0695b26fa95f475f1d01704d2d38e73465ca30b0b2f5dc789d3
         x-checker-data:
           type: anitya
           project-id: 5350
@@ -80,8 +82,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/protocolbuffers/protobuf.git
-        commit: f377bfefc5e2cfab68b816903c25b23e091c439d
-        tag: v36.1
+        commit: 2c74169b34066ceb8ddb6b882fcb3fb32d737a55
+        tag: v36.2
         x-checker-data:
           type: json
           url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
@@ -112,7 +114,8 @@ modules:
       - cargo --offline build --release --verbose
       - install -Dm775 target/release/honkers-railway-launcher /app/bin/honkers-railway-launcher
       - install -Dm755 moe.launcher.the-honkers-railway-launcher.sh /app/bin/moe.launcher.the-honkers-railway-launcher
-      - install -Dm644 assets/images/icon.png /app/share/icons/hicolor/512x512/apps/moe.launcher.the-honkers-railway-launcher.png
+      - install -Dm644 assets/images/icon.png 
+        /app/share/icons/hicolor/512x512/apps/moe.launcher.the-honkers-railway-launcher.png
       - desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=moe.launcher.the-honkers-railway-launcher
         --set-key=Icon --set-value=moe.launcher.the-honkers-railway-launcher assets/honkers-railway-launcher.desktop
       - install -Dm644 assets/moe.launcher.the-honkers-railway-launcher.metainfo.xml
