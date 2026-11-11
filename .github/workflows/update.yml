@@ -19,12 +19,16 @@ env:
 jobs:
   update-launcher:
     runs-on: ubuntu-latest
+    container: fedora:latest
 
     strategy:
       matrix:
         branch: [ master ]
 
     steps:
+      - name: Install dependencies
+        run: dnf install -y git yq python3-tomlkit python3-aiohttp
+
       - uses: actions/checkout@v4
         with:
           ref: ${{ matrix.branch }}
@@ -34,15 +38,10 @@ jobs:
           git clone -b master https://github.com/flatpak/flatpak-builder-tools ../builder-tools
 
       - name: Get honkers railway launcher repo
+        env:
+          tag: ${{ inputs.tag }}
         run: |
-          git clone https://github.com/an-anime-team/the-honkers-railway-launcher ../hrl
-
-      - name: Install dependencies
-        run: |
-          set -e
-          sudo snap install yq
-          sudo apt update
-          sudo apt install python3-tomlkit python3-aiohttp -y
+          git clone --depth 1 -b "$tag" https://github.com/an-anime-team/the-honkers-railway-launcher ../hrl
 
       - name: Generate Cargo sources
         run: |
